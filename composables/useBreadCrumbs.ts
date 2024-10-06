@@ -6,5 +6,11 @@ export const useBreadCrumbs = () =>
 
 export function dropBreadcrumbs() {
   const breadCrumbsLinks = useBreadCrumbs();
-  onUnmounted(() => (breadCrumbsLinks.value.length = 0));
+  onUnmounted(
+    () =>
+      (breadCrumbsLinks.value = [
+        { label: "Смартфоны и гаджеты", to: "/" },
+        { label: "Смартфоны", to: "/" },
+      ])
+  );
 }

@@ -7,13 +7,13 @@ const breadCrumbs = useBreadCrumbs();
 </script>
 
 <template>
-  <ul class="flex gap-3">
+  <ul class="flex gap-3 flex-wrap">
     <li
       v-for="(item, index) in breadCrumbs"
       :key="index"
-      class="flex gap-4 items-center"
+      class="flex gap-4 items-center text-nowrap"
     >
-      <nuxt-link :to="item.to" class="text-[#2667FF]">
+      <nuxt-link :to="item.to" class="text-[#2667FF] text-sm">
         {{ item.label }}
       </nuxt-link>
       <ArrowIcon
